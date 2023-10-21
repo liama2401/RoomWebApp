@@ -7,6 +7,7 @@ namespace RoomWebApp.Pages
 {
     public class IndexModel : PageModel
     {
+        private readonly ILogger<IndexModel> _logger;
 
         [BindProperty]
         public double Height { get; set; }
@@ -72,7 +73,7 @@ namespace RoomWebApp.Pages
 
             // Draw the edges of the cuboid
             var paint = new SKPaint
-            {
+        {
                 Color = SKColors.Blue,
                 IsAntialias = true,
                 Style = SKPaintStyle.Stroke,
