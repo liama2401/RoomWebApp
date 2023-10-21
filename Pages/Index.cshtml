@@ -1,0 +1,53 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Room Calculatorddd</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" />
+
+</head>
+<body>
+    <div class="container">
+        <h2>Room Calculator</h2>
+        <form method="post">
+            <div class="form-group">
+                <label for="height">Height (m):</label>
+                <input type="text" class="form-control" id="height" name="height" required>
+            </div>
+            <div class="form-group">
+                <label for="width">Width (m):</label>
+                <input type="text" class="form-control" id="width" name="width" required>
+            </div>
+            <div class="form-group">
+                <label for="length">Length (m):</label>
+                <input type="text" class="form-control" id="length" name="length" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Calculate</button>
+        </form>
+    </div>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    @if (Model.ShowResults)
+    {
+        <div class="container text-center">
+            <h2>Results</h2>
+            <p>Area of floor: @Model.Area m<sup>2</sup></p>
+            <p>Paint Needed: @Model.PaintNeeded litres</p>
+            <p>Volume of room: @Model.Volume m<sup>3</sup></p>
+                <img src="@Model.ImageData" alt="Cuboid Room Diagram" />
+                  <form method="get">
+                    <button type="submit" class="btn btn-secondary">Reset</button>
+                </form>
+        </div>
+         
+    }
+  
+
+</body>
+
+</html>
