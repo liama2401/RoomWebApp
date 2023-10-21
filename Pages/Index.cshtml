@@ -1,0 +1,35 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Room Calculator</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="container">
+        <h2>Room Calculator</h2>
+        <form method="post" action="Room/Calculate">
+            <div class="form-group">
+                <label for="height">Height:</label>
+                <input type="text" class="form-control" id="height" name="height" required>
+            </div>
+            <div class="form-group">
+                <label for="width">Width:</label>
+                <input type="text" class="form-control" id="width" name="width" required>
+            </div>
+            <div class="form-group">
+                <label for="length">Length:</label>
+                <input type="text" class="form-control" id="length" name="length" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Calculate</button>
+        </form>
+    </div>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</body>
+</html>
